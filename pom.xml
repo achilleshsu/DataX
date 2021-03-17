@@ -67,7 +67,7 @@
         <module>tsdbreader</module>
         <module>opentsdbreader</module>
         <module>cassandrareader</module>
-        <module>gdbreader</module>
+        <!-- <module>gdbreader</module> -->
 
         <!-- writer -->
         <module>mysqlwriter</module>
@@ -94,10 +94,10 @@
         <module>elasticsearchwriter</module>
         <module>tsdbwriter</module>
         <module>adbpgwriter</module>
-        <module>gdbwriter</module>
+        <!-- <module>gdbwriter</module> -->
         <module>cassandrawriter</module>
         <module>clickhousewriter</module>
-        <module>oscarwriter</module>
+        <!-- <module>oscarwriter</module> -->
         <!-- common support module -->
         <module>plugin-rdbms-util</module>
         <module>plugin-unstructured-storage-util</module>
