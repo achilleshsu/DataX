@@ -97,6 +97,85 @@
             <artifactId>groovy-all</artifactId>
             <version>2.1.9</version>
         </dependency>
+        
+
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner  -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-table-planner-blink_2.12</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-api-java-bridge 	-->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-table-api-java-bridge_2.12</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+
+
+  		<!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-api -->
+  	<dependency>
+    	<groupId>org.apache.iceberg</groupId>
+    	<artifactId>iceberg-core</artifactId>
+    	<version>0.11.0</version>
+  	</dependency>
+
+ 
+		<!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-flink-runtime  -->
+	<dependency>
+    	<groupId>org.apache.iceberg</groupId>
+    	<artifactId>iceberg-flink-runtime</artifactId>
+    	<version>0.11.0</version>
+	</dependency>
+	
+    <!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-flink  -->
+	<dependency>
+    	<groupId>org.apache.iceberg</groupId>
+    	<artifactId>iceberg-flink</artifactId>
+    	<version>0.11.0</version>
+	</dependency>
+
+
+
+	<!-- https://mvnrepository.com/artifact/org.alluxio/alluxio-core-client-fs  -->
+	<dependency>
+    	<groupId>org.alluxio</groupId>
+    	<artifactId>alluxio-core-client-hdfs</artifactId>
+    	<version>2.4.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java 	 -->
+	<dependency>
+    	<groupId>com.google.protobuf</groupId>
+    	<artifactId>protobuf-java</artifactId>
+    	<version>3.15.5</version>
+	</dependency>	
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-common</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+
+	 
+		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs  -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-hdfs</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+	
+		
+	<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs-client  -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-hdfs-client</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+		
     </dependencies>
 
     <build>
@@ -136,6 +215,38 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              						<mainClass>com.alibaba.datax.core.Engine</mainClass>
+            					</transformer>
+							</transformers>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+						</configuration>			
+					</execution>
+				</executions>
+			</plugin>
+             
             <!-- compiler plugin -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

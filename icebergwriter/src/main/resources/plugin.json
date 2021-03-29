@@ -1,0 +1,6 @@
+{
+    "name": "icebergwriter",
+    "class": "com.alibaba.datax.plugin.writer.icebergwriter.IcebergWriter",
+    "description": "useScene: prod. mechanism: via flink tableenv connect stroage write data concurrent.",
+    "developer": "achilleshsu"
+}

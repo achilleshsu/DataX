@@ -1,0 +1,230 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.alibaba.datax</groupId>
+    <artifactId>datax-all</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>icebergwriter</artifactId>
+  <name>icebergwriter</name>
+  <packaging>jar</packaging>
+  
+  <dependencies>
+  	<dependency>
+ 		<groupId>com.alibaba.datax</groupId>
+		<artifactId>datax-common</artifactId>
+		<version>${datax-project-version}</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>slf4j-log4j12</artifactId>
+				<groupId>org.slf4j</groupId>
+			</exclusion>
+		</exclusions> 	
+  	</dependency>
+  	
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-clients -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-clients_2.12</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-table</artifactId>
+    	<version>1.11.3</version>
+    	<type>pom</type>
+	</dependency>	
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-table-planner-blink_2.12</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner-blink 	 -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-table-runtime-blink_2.12</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-api-java-bridge -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-table-api-java-bridge_2.12</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+
+  		<!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-api -->
+  	<dependency>
+    	<groupId>org.apache.iceberg</groupId>
+    	<artifactId>iceberg-core</artifactId>
+    	<version>0.10.0</version>
+  	</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-flink-runtime -->
+	<dependency>
+    	<groupId>org.apache.iceberg</groupId>
+    	<artifactId>iceberg-flink-runtime</artifactId>
+    	<version>0.10.0</version>
+	</dependency>
+	
+    <!-- https://mvnrepository.com/artifact/org.apache.iceberg/iceberg-flink -->
+	<dependency>
+    	<groupId>org.apache.iceberg</groupId>
+    	<artifactId>iceberg-flink</artifactId>
+    	<version>0.10.0</version>
+	</dependency>
+
+
+	<!-- https://mvnrepository.com/artifact/org.alluxio/alluxio-core-client-fs -->
+	<dependency>
+    	<groupId>org.alluxio</groupId>
+    	<artifactId>alluxio-core-client-hdfs</artifactId>
+    	<version>2.4.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+	<dependency>
+    	<groupId>com.google.protobuf</groupId>
+    	<artifactId>protobuf-java</artifactId>
+    	<version>3.15.5</version>
+	</dependency>	
+
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-common</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-hdfs</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+	
+		
+	<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-hdfs-client -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-hdfs-client</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+	
+		
+	<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-s3-fs-hadoop -->
+	<dependency>
+    	<groupId>org.apache.flink</groupId>
+    	<artifactId>flink-s3-fs-hadoop</artifactId>
+    	<version>1.11.3</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-aws</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+	
+		 
+	<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aliyun -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-aliyun</artifactId>
+    	<version>3.1.4</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-core -->
+	<dependency>
+    	<groupId>org.apache.hadoop</groupId>
+    	<artifactId>hadoop-mapreduce-client-core</artifactId>
+    	<version>0.23.1</version>
+	</dependency>
+
+  </dependencies>
+
+  
+    <build>
+    
+    
+        <plugins>
+            <!-- compiler plugin -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk-version}</source>
+                    <target>${jdk-version}</target>
+                    <encoding>${project-sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            
+             <!--
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>META-INF/services/org.apache.flink.table.factories.TableFactory</resource>
+								</transformer>							
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              						<mainClass>com.alibaba.datax.plugin.writer.icebergwriter.IcebergWriter</mainClass>
+            					</transformer>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>reference.conf</resource>
+								</transformer>
+							</transformers>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+						</configuration>			
+					</execution>
+				</executions>
+			</plugin>
+			 -->
+			
+            <!-- assembly plugin -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/package.xml</descriptor>
+                    </descriptors>
+                    <finalName>datax</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>dwzip</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+
+			            
+        </plugins>
+    </build>
+</project>

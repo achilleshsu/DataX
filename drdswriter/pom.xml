@@ -66,6 +66,9 @@
                     <descriptors>
                         <descriptor>src/main/assembly/package.xml</descriptor>
                     </descriptors>
+                    <descriptorRefs>
+                    	<descriptorRef>jar-with-dependencies</descriptorRef>
+                 	</descriptorRefs>
                     <finalName>datax</finalName>
                 </configuration>
                 <executions>

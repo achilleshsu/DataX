@@ -8,6 +8,17 @@
         <format>dir</format>
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
+    <!--  
+    <dependencySets>
+    	<dependencySet>
+           <outputDirectory>/</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>flink-table-planner-blink_2.12</include>
+            </includes>
+   		</dependencySet>
+   	</dependencySets>
+   	-->
     <fileSets>
         <fileSet>
             <directory>transformer/target/datax/</directory>
@@ -385,5 +396,12 @@
             </includes>
             <outputDirectory>datax</outputDirectory>
         </fileSet>
+        <fileSet>
+            <directory>icebergwriter/target/datax/</directory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+            <outputDirectory>datax</outputDirectory>
+        </fileSet>        
     </fileSets>
 </assembly>

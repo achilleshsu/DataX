@@ -1,0 +1,15 @@
+{
+    "name": "icebergwriter",
+    "parameter": {
+        "endpoint": "",
+        "accessKey": "",
+        "secretKey": "",
+        "dbName": "",
+        "tableName": "",
+        "column": [],
+        "upsertInfo": {
+            "isUpsert": "",
+            "upsertKey": ""
+        }
+    }
+}

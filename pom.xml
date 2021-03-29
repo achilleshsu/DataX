@@ -11,6 +11,7 @@
             <artifactId>hamcrest-core</artifactId>
             <version>1.3</version>
         </dependency>
+        
     </dependencies>
 
     <name>datax-all</name>
@@ -46,10 +47,10 @@
         <module>transformer</module>
 
         <!-- reader -->
+        <!--       
         <module>mysqlreader</module>
         <module>drdsreader</module>
         <module>sqlserverreader</module>
-        <module>postgresqlreader</module>
         <module>kingbaseesreader</module>
         <module>oraclereader</module>
         <module>odpsreader</module>
@@ -60,16 +61,19 @@
         <module>streamreader</module>
         <module>ossreader</module>
         <module>ftpreader</module>
-        <module>mongodbreader</module>
         <module>rdbmsreader</module>
         <module>hbase11xreader</module>
         <module>hbase094xreader</module>
         <module>tsdbreader</module>
         <module>opentsdbreader</module>
         <module>cassandrareader</module>
+        <module>mongodbreader</module>
+        -->  
+        <module>postgresqlreader</module>
         <!-- <module>gdbreader</module> -->
 
         <!-- writer -->
+		<!--      
         <module>mysqlwriter</module>
         <module>drdswriter</module>
         <module>odpswriter</module>
@@ -80,10 +84,8 @@
         <module>otswriter</module>
         <module>oraclewriter</module>
         <module>sqlserverwriter</module>
-        <module>postgresqlwriter</module>
         <module>kingbaseeswriter</module>
         <module>osswriter</module>
-        <module>mongodbwriter</module>
         <module>adswriter</module>
         <module>ocswriter</module>
         <module>rdbmswriter</module>
@@ -94,9 +96,13 @@
         <module>elasticsearchwriter</module>
         <module>tsdbwriter</module>
         <module>adbpgwriter</module>
-        <!-- <module>gdbwriter</module> -->
         <module>cassandrawriter</module>
         <module>clickhousewriter</module>
+        <module>postgresqlwriter</module>
+        <module>mongodbwriter</module>
+          --> 
+        <module>icebergwriter</module>         
+        <!-- <module>gdbwriter</module> -->
         <!-- <module>oscarwriter</module> -->
         <!-- common support module -->
         <module>plugin-rdbms-util</module>
