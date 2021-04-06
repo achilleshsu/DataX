@@ -6,10 +6,6 @@
         "secretKey": "",
         "dbName": "",
         "tableName": "",
-        "column": [],
-        "upsertInfo": {
-            "isUpsert": "",
-            "upsertKey": ""
-        }
+        "column": []
     }
 }

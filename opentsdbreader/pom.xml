@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- common -->
-        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-lang3.version>3.10</commons-lang3.version>
 
         <!-- http -->
         <httpclient.version>4.5</httpclient.version>
